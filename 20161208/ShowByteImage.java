@@ -9,12 +9,13 @@ public class ShowByteImage{
 			inFile = new FileInputStream("2.jpg");
 
 			int data;
-			
+			int n =0;
 			while((data = inFile.read())!= -1){
 				
 				System.out.println(data);
+				n++;
 			}
-
+			System.out.println("繰り返し：" +n+ "回");
 			inFile.close();
 
 			
