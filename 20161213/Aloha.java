@@ -1,11 +1,12 @@
 public class Aloha{
 	public static void main(String[] args) {
-		for (int i = 0; i<20; i++) {
-			if (i%4 == 0) {
-				System.out.println("アロハ");				
-			}else{
-				System.out.println("Aloha");
+
+			System.out.print("Input data:");
+			String data = new java.util.Scanner(System.in).nextLine();
+			System.out.println(data);		
+
+			if(data.equals("exit")){
+				System.out.println("終わります");
 			}
 		}
 	}
-}
