@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Canvas2</title>
+</head>
+<body>
+	<h1>Canvas2</h1>
+	<hr>
+
+	<canvas id="canvas" width="500" height="500"></canvas>
+
+	<script type="text/javascript">
+		
+		var canvas = document.getElementById('canvas');
+		var ctx = canvas.getContext('2d');
+
+		var x = 0;
+		var y = 0;
+		var d = 20;
+
+		ctx.fillStyle = "rgb(200,0,0)";
+
+		for(var i=0; i<10; i++){
+
+			ctx.fillRect(x+i*d,y*d+i,30,30);
+
+		}
+
+	</script>
+
+</body>
+</html>

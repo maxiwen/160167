@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Canvas</title>
+</head>
+<body>
+	<h1>Canvas</h1>
+	<hr>
+
+	<canvas id="canvas" width="500" height="500"></canvas>
+
+	<script>
+		var canvas = document.getElementById('canvas');
+		var ctx = canvas.getContext('2d');
+
+		for(var i=0; i<10; i++){
+			if (i%3==0 ){
+				ctx.fillStyle = "rgb(0,120,0)";
+				ctx.strokeRect(100+i*10,100+i*20,100,100);
+			}else{
+				ctx.fillStyle = "rgb(60,120,0)";
+				ctx.fillRect(100+i*20,100+i*10,100,100);
+			}
+		}
+
+		ctx.beginPath();
+		ctx.moveTo(70,50);
+		ctx.lineTo(100,75);
+		ctx.lineTo(100,25);
+		ctx.fill();
+
+		ctx.beginPath();
+		ctx.moveTo(70,50);
+		ctx.lineTo(100,75);
+		ctx.lineTo(100,25);
+		ctx.fill();
+
+		ctx.moveTo(130, 0);		
+		ctx.lineTo(105, 25);	
+		ctx.lineTo(155, 25);	
+		ctx.fill();
+
+		ctx.moveTo(130, 100);	
+		ctx.lineTo(155, 75);	
+		ctx.lineTo(105, 75);
+		ctx.fill();
+
+		ctx.fillStyle = "rgb(0, 0, 200)";
+		ctx.beginPath();
+		ctx.arc(350, 100,    50,   0,  Math.PI*1.5,   false);
+		ctx.closePath();
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.arc(360, 90,    50,   0,  Math.PI*1.5,   true);
+		ctx.closePath();
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.moveTo(360, 250);
+		ctx.arc(360, 250,    50,   0,  Math.PI*1.5,   true);
+		ctx.closePath();
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.moveTo(350, 260);
+		ctx.arc(350, 260,    50,   0,  Math.PI*1.5,   false);
+		ctx.closePath();
+		ctx.stroke();
+
+
+
+	</script>
+
+</body>
+</html>

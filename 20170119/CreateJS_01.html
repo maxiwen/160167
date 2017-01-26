@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+ <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+  <script>
+    window.addEventListener("load",init);
+
+    function init(){
+      var stage = new createjs.Stage("myCanvas");
+
+      var shape = new createjs.Shape();
+      
+      //shape.graphics.beginStroke("LightGreen");
+      //shape.graphics.setStrokeStyle(5);
+      shape.graphics.beginFill("LightGreen");
+      shape.graphics.drawCircle(100,100,50);
+
+      shape.graphics.beginFill("Red");
+      shape.graphics.drawRoundRect(160,40,120,120,30,30);
+
+      shape.graphics.beginFill("LightBlue");
+      shape.graphics.drawRect(300,40,120,120);
+
+      shape.graphics.beginFill("Yellow");
+      shape.graphics.moveTo(0,0);
+      shape.graphics.lineTo(100,0);
+      shape.graphics.lineTo(0,100);
+      shape.graphics.lineTo(0,0);
+
+      shape.graphics.beginFill("PInk");
+      shape.graphics.drawPolyStar(500, 100, 75, 5, 0.6, -90);
+
+     /* shape.graphics.beginFill("Purple");
+      var x =600;
+      var y =40;
+      var z =;
+      var l =;
+      var h =;
+      var t =;
+
+      shape.graphics.moveTo(x,y);
+      shape.graphics.lineTo(700,40);
+      shape.graphics.lineTo(30,700);
+      shape.graphics.lineTo(30,40);
+      */
+
+     
+      stage.addChild(shape);
+
+      stage.update();
+    }
+
+    
+  </script>
+</head>
+<body>
+  <canvas id="myCanvas" width="640" height="320"></canvas>
+</body>
+</html>
