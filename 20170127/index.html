@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CreateJS</title>
+</head>
+<body>
+<canvas id="myCanvas" width="900" height="600"></canvas>
+
+  	<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+  	<script>
+  		window.addEventListener('load', init);
+
+  		function init() {
+  			var stage = new createjs.Stage("myCanvas");
+  			var shape = new createjs.Shape();
+
+  			shape.graphics.beginFill("#ff0000");
+  			shape.graphics.drawRect(100,100,80,80);
+  			shape.rotation = 45;
+
+  			stage.addChild(shape);
+  			stage.updata();
+  		}
+  	</script>
+
+</body>
+</html>
