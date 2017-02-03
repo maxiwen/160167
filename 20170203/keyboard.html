@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>createjs:keyboard</title>
+</head>
+<body>
+	<h1>createjs:keyboard</h1>
+	<hr>
+
+	<canvas id="myCanvas" width="900" height="600"></canvas>
+
+	<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+
+	<script>
+		window.addEventListener('load', init);
+
+
+		function init() {
+			var stage = new createjs.Stage("myCanvas");
+			var shape = new createjs.Shape();
+
+			shape.graphics.beginFill("#00ff00");
+			shape.graphics.drawRect(0, 0, 100, 100);
+
+			stage.addChild(shape);
+
+			window.addEventListener('keydown',handleKeydown);
+			stage.update();
+
+			var muki1 = 0;
+			var muki2 = 0;
+			function handleKeydown(event){
+
+				var keyCode = event.keyCode;
+
+				if (keyCode == 39) muki1 = +1;
+				if (keyCode == 37) muki1 = -1;
+				if (keyCode == 38) muki2 = +1;
+				if (keyCode == 40) muki2 = -1;
+				
+				}
+				createjs.Ticker.on('tick',function(){
+					shape.x += 4 * muki1;
+					shape.y -= 4 * muki2;
+
+					stage.update();
+				});
+				
+			}
+		
+	</script>
+</body>
+</html>
